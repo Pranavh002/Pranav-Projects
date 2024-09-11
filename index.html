@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TODO APP</h1>
+
+        <!-- Tab Buttons -->
+        <div class="tab-container">
+            <button id="pending-tab" class="tab-button active" onclick="showTab('pending')">Pending Tasks</button>
+            <button id="completed-tab" class="tab-button" onclick="showTab('completed')">Completed Tasks</button>
+        </div>
+
+        <!-- Task List -->
+        <ul id="todo-list"></ul> 
+
+        <!-- Add Task Button -->
+        <div class="add-task-btn" onclick="openForm('add')">
+            <svg width="24" height="24" fill="white">
+                <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Task Form -->
+    <div id="task-form" class="task-form hidden">
+        <h2 id="form-title">Add New Task</h2>
+        <label for="task-title"></label>
+        <input type="text" id="task-title" placeholder="Title" required>
+        <label for="task-description"></label>
+        <textarea id="task-description" placeholder="Description" required></textarea>
+        <label for="task-tags"></label>
+        <input type="text" id="task-tags" placeholder="Tags (comma separated)">
+        <button id="submit-button" onclick="addTask()">Add</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+</body>
+</html>
